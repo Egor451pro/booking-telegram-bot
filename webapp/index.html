@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Запись</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="hero">
+        <p class="eyebrow" id="studio">Запись</p>
+        <h1>Выберите визит</h1>
+        <ol class="steps" id="steps">
+          <li data-step="service" class="is-current">Услуга</li>
+          <li data-step="date">Дата</li>
+          <li data-step="time">Время</li>
+        </ol>
+      </header>
+
+      <section id="service-section" aria-labelledby="service-title">
+        <div class="section-head">
+          <h2 id="service-title">Услуга</h2>
+        </div>
+        <div id="services" class="stack"></div>
+      </section>
+
+      <section id="date-section" aria-labelledby="date-title" hidden>
+        <div class="section-head">
+          <h2 id="date-title">Дата</h2>
+        </div>
+        <div class="calendar">
+          <div class="month-bar">
+            <button type="button" id="prev-month" aria-label="Предыдущий месяц">←</button>
+            <p id="month-label"></p>
+            <button type="button" id="next-month" aria-label="Следующий месяц">→</button>
+          </div>
+          <div class="weekdays" aria-hidden="true">
+            <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>
+          </div>
+          <div id="grid" class="grid"></div>
+        </div>
+      </section>
+
+      <section id="time-section" aria-labelledby="time-title" hidden>
+        <div class="section-head">
+          <h2 id="time-title">Время</h2>
+          <p class="hint">Свободные начала визита. Занятые часы уже скрыты.</p>
+        </div>
+        <div id="slots" class="slots"></div>
+      </section>
+
+      <section id="summary" class="summary" hidden>
+        <p class="eyebrow">Ваш визит</p>
+        <h2 id="summary-title"></h2>
+        <p id="summary-when"></p>
+        <p id="summary-price"></p>
+        <button type="button" id="confirm">Подтвердить и оплатить</button>
+        <p class="hint">Выбор уйдёт в чат с ботом, следом придёт счёт.</p>
+      </section>
+
+      <p id="status" class="status" role="status" hidden></p>
+      <pre id="preview" class="preview" hidden></pre>
+    </main>
+    <noscript>Для записи нужен JavaScript.</noscript>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
